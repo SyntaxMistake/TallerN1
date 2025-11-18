@@ -42,7 +42,25 @@
             ningún dígito par, la categoría es “Seguridad”."
           </li>
         </div>
+        <div class="resultado">
+          <label for="codigo">Ingrese el código de 3 cifras:</label>
+          <input
+            type="number"
+            name="codigo"
+            id="codigo"
+            min="100"
+            max="999"
+            placeholder="100"
+          />
+          <button id="calculate">Calcular Categoría</button>
+
+          <br />
+          <div class="resultadoT" id="resultadoT">
+            <h2>La categoría del empleado es:</h2>
+            <div class="categoria" id="categoria">---</div>
+          </div>
       </section>
     </div>
+    <script src="scripts/problemaN2.js"></script>
   </body>
 </html>

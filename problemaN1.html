@@ -38,11 +38,13 @@
           </p>
         </div>
         <div class="resultado">
-          <form action="/submit-handler" method="post">
-            <label for="cantidad">Cuantas años tiene la persona?</label>
-            <input type="number" name="cantidad" min="1" value="1" />
-            <input type="submit" value="Solicitar" />
-          </form>
+          <label for="cantidad">Cuantas años tiene la persona?</label>
+          <input type="number" name="edad" id="edad" min="1" max="120" />
+          <button id="calculate">Calcular Precio</button>
+
+          <br />
+          <h2>El precio de la entrada es:</h2>
+          <div class="precio" id="precio">$0</div>
         </div>
       </section>
     </div>

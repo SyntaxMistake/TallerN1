@@ -43,7 +43,54 @@
             “Valores fuera de rango, verifica los datos”.
           </p>
         </div>
+        <div class="resultado">
+          <label for="temperatura">Ingrese la temperatura (°C):</label>
+          <input
+            type="number"
+            name="temperatura"
+            id="temperatura"
+            placeholder="0"
+          />
+          <br />
+          <label for="humedad">Ingrese la humedad relativa (%):</label>
+          <input type="number" name="humedad" id="humedad" placeholder="0" />
+          <br />
+          <button id="calculate">Determinar Clima</button>
+
+          <br />
+          <div class="resultadoT" id="resultadoT">
+            <h2>El estado del clima es:</h2>
+            <div class="clima" id="clima">---</div>
+          </div>
+        </div>
       </section>
     </div>
+    <script>
+      document
+        .getElementById("calculate")
+        .addEventListener("click", function () {
+          const temperatura = parseFloat(
+            document.getElementById("temperatura").value
+          );
+          const humedad = parseFloat(document.getElementById("humedad").value);
+          let clima = "";
+
+          if (temperatura < 10) {
+            clima = "Clima frío";
+          } else if (temperatura >= 10 && temperatura <= 25 && humedad < 60) {
+            clima = "Clima templado y seco";
+          } else if (temperatura >= 10 && temperatura <= 25 && humedad >= 60) {
+            clima = "Clima templado y húmedo";
+          } else if (temperatura >= 26 && temperatura <= 35) {
+            clima = "Clima cálido";
+          } else if (temperatura > 35) {
+            clima = "Clima caluroso extremo, mantente hidratado";
+          } else {
+            clima = "Valores fuera de rango, verifica los datos";
+          }
+
+          document.getElementById("clima").innerText = clima;
+        });
+    </script>
   </body>
 </html>

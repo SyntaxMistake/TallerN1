@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="estilos/estilosSencillo.css" />
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <title>TallerN1</title>
   </head>
   <body>
@@ -33,9 +34,50 @@
             (x, y) de dos puntos calcule la pendiente de la recta que pasa por
             ambos puntos. La pendiente de dicha recta se calcula como:
           </p>
-          <p>m = (y2 - y1) / (x2 - x1)</p>
+          <p style="text-align: center; font-size: 2rem; font-weight: 600">
+            $$ m = \frac{y_2 - y_1}{x_2 - x_1} $$
+          </p>
+        </div>
+        <div class="respuesta">
+          <label for="x1">Ingrese la coordenada x1:</label>
+          <input type="number" name="x1" id="x1" placeholder="0" />
+          <br />
+          <label for="y1">Ingrese la coordenada y1:</label>
+          <input type="number" name="y1" id="y1" placeholder="0" />
+          <br />
+          <label for="x2">Ingrese la coordenada x2:</label>
+          <input type="number" name="x2" id="x2" placeholder="0" />
+          <br />
+          <label for="y2">Ingrese la coordenada y2:</label>
+          <input type="number" name="y2" id="y2" placeholder="0" />
+          <br />
+          <button id="calculate">Calcular Pendiente</button>
+
+          <br />
+          <div class="resultadoT" id="resultadoT">
+            <h2>La pendiente de la recta es:</h2>
+            <div class="pendiente" id="pendiente">---</div>
+          </div>
         </div>
       </section>
     </div>
+    <script>
+      document
+        .getElementById("calculate")
+        .addEventListener("click", function () {
+          const x1 = parseFloat(document.getElementById("x1").value);
+          const y1 = parseFloat(document.getElementById("y1").value);
+          const x2 = parseFloat(document.getElementById("x2").value);
+          const y2 = parseFloat(document.getElementById("y2").value);
+
+          if (x2 === x1) {
+            document.getElementById("pendiente").innerText =
+              "La pendiente es indefinida (división por cero).";
+          } else {
+            const m = (y2 - y1) / (x2 - x1);
+            document.getElementById("pendiente").innerText = m.toFixed(2);
+          }
+        });
+    </script>
   </body>
 </html>

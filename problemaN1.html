@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos/estilosSencillo.css" />
+    <script src="Scripts/problemaN1.js"></script>
+    <title>TallerN1</title>
+  </head>
+  <body>
+    <div class="contenedor" id="contenedorPrin">
+      <header class="header">
+        <h1>TallerN1</h1>
+        <nav class="navbar">
+          <ul>
+            <li><a href="problemaN1.html">ProblemaN1</a></li>
+            <li>
+              <a href="problemaN2.html">ProblemaN2</a>
+            </li>
+            <li>
+              <a href="problemaN3.html">ProblemaN3</a>
+            </li>
+            <li>
+              <a href="problemaN4.html"> ProblemaN4</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section class="body">
+        <div class="enunciado">
+          <h2>Bienvenido al problemaN1</h2>
+          <p>
+            El costo de la entrada a un parque de diversión depende de la edad
+            de una persona; si la persona tiene más de 1 año y menos de 4 años
+            entra gratis; si tiene entre 4 y 8 años paga $2, si tiene entre 9 y
+            16 años paga $5, si tiene entre 17 y 35 años pagar $7 y si tiene más
+            de 35 años paga $10.
+          </p>
+        </div>
+        <div class="resultado">
+          <form action="/submit-handler" method="post">
+            <label for="cantidad">Cuantas años tiene la persona?</label>
+            <input type="number" name="cantidad" min="1" value="1" />
+            <input type="submit" value="Solicitar" />
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
